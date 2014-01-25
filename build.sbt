@@ -1,11 +1,11 @@
+import play._
+
 name := "push-server"
 
 version := "1.0-SNAPSHOT"
 
 libraryDependencies ++= Seq(
-  jdbc,
-  anorm,
-  cache
-)     
+    cache
+)
 
 play.Project.playScalaSettings

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<configuration>
+
+    <conversionRule conversionWord="coloredLevel" converterClass="play.api.Logger$ColoredLevel"/>
+
+    <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{ISO8601} %-5level [%thread] %logger{36}.%method : %msg%n</pattern>
+            <immediateFlush>true</immediateFlush>
+            <charset>UTF-8</charset>
+        </encoder>
+    </appender>
+
+    <appender name="file" class="ch.qos.logback.core.FileAppender">
+        <file>${application.home}/logs/application.log</file>
+        <append>true</append>
+        <encoder>
+            <pattern>%d{ISO8601} %-5level [%thread] %logger{36}.%method : %msg%n</pattern>
+            <immediateFlush>false</immediateFlush>
+            <charset>UTF-8</charset>
+        </encoder>
+    </appender>
+
+    <logger name="play" level="INFO"/>
+    <logger name="application" level="DEBUG"/>
+    <logger name="controllers" level="DEBUG"/>
+
+    <root level="DEBUG">
+        <appender-ref ref="console"/>
+        <appender-ref ref="file"/>
+    </root>
+
+</configuration>
