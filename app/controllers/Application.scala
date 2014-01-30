@@ -15,7 +15,7 @@ object Application extends Controller {
         Ok(views.html.index("Push Server"))
     }
 
-    def push(jsonText: String) = Action.async {
+    def async = Action.async {
         future {
             Ok("success")
         }
